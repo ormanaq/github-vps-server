@@ -1,0 +1,12 @@
+name: CI
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: apt install neofetch -y
+      - run: curl -sSf https://sshx.io/get | sh -s run
+      - run: neofetch
+      - run: echo 'Ready! Sub please'
